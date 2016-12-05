@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  const buttons = ['stop', 'slow', 'go']
-  buttons.forEach(function(type) {
+  const button_types = ['stop', 'slow', 'go']
+  button_types.forEach(function(type) {
     const button = document.querySelector(`#${type}Button`)
     button.addEventListener('click', change_light)
     button.addEventListener('mouseenter', log_was_entered)
