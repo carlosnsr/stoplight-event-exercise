@@ -36,4 +36,15 @@
   go_button.addEventListener('mouseleave', function (event) {
     console.log(`Left ${this.textContent} button`)
   })
+
+  var controls = document.querySelector('#controls')
+  controls.addEventListener('click', function (event) {
+    var button = event.target
+    if (button && button.classList.contains('button')) {
+      var type = button.textContent
+      var is_light_on = document.querySelector(`#${type.toLowerCase()}Light`)
+        .classList.contains(type.toLowerCase())
+      console.log(`${type} bulb ${is_light_on ? 'on' : 'off'}`)
+    }
+  })
 })();
