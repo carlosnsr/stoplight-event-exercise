@@ -29,9 +29,8 @@
 
   const controls = document.querySelector('#controls')
   controls.addEventListener('click', function (event) {
-    const button = event.target
-    if (is_button(button)) {
-      const text = button.textContent
+    if (is_button(event.target)) {
+      const text = event.target.textContent
       console.log(`${text} bulb ${is_light_on(text.toLowerCase()) ? 'on' : 'off'}`)
     }
   })
