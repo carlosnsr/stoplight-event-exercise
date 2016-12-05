@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  var buttons = ['stop', 'slow', 'go']
+  const buttons = ['stop', 'slow', 'go']
   buttons.forEach(function(type) {
-    var button = document.querySelector(`#${type}Button`)
+    const button = document.querySelector(`#${type}Button`)
     button.addEventListener('click', change_light)
     button.addEventListener('mouseenter', log_was_entered)
     button.addEventListener('mouseleave', log_was_left)
@@ -27,11 +27,11 @@
     console.log(`Left ${this.textContent} button`)
   }
 
-  var controls = document.querySelector('#controls')
+  const controls = document.querySelector('#controls')
   controls.addEventListener('click', function (event) {
-    var button = event.target
+    const button = event.target
     if (is_button(button)) {
-      var text = button.textContent
+      const text = button.textContent
       console.log(`${text} bulb ${is_light_on(text.toLowerCase()) ? 'on' : 'off'}`)
     }
   })
