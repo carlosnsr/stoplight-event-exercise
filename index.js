@@ -31,7 +31,7 @@
   controls.addEventListener('click', function (event) {
     if (is_button(event.target)) {
       const text = event.target.textContent
-      console.log(`${text} bulb ${is_light_on(text.toLowerCase()) ? 'on' : 'off'}`)
+      console.log(`${text} bulb ${get_light_status(text.toLowerCase())}`)
     }
   })
 
@@ -39,7 +39,8 @@
     return (element && element.classList.contains('button'))
   }
 
-  function is_light_on(type) {
-    return get_light(type).classList.contains(type)
+  function get_light_status(type) {
+    const is_light_on = get_light(type).classList.contains(type)
+    return (is_light_on ? 'on' : 'off')
   }
 })();
