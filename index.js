@@ -30,8 +30,8 @@
   const controls = document.querySelector('#controls')
   controls.addEventListener('click', function (event) {
     if (is_button(event.target)) {
-      const text = event.target.textContent
-      console.log(`${text} bulb ${get_light_status(text.toLowerCase())}`)
+      const type = event.target.textContent
+      console.log(`${type} bulb ${get_light_status(type.toLowerCase())}`)
     }
   })
 
