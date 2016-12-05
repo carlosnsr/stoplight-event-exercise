@@ -9,13 +9,16 @@
     console.log(`Left ${this.textContent} button`)
   }
 
+  function get_light(type) {
+    return document.querySelector(`#${type}Light`)
+  }
+
   var buttons = ['stop', 'slow', 'go']
   buttons.forEach(function(type) {
     // NOTE: change_light depends on the local variable `type` and so cannot be
     // lifted out of the forEach() unless we use a closure
     function change_light(event) {
-      var light = document.querySelector(`#${type}Light`)
-      light.classList.toggle(type)
+      get_light(type).classList.toggle(type)
     }
 
     var button = document.querySelector(`#${type}Button`)
@@ -28,9 +31,8 @@
     return (element && element.classList.contains('button'))
   }
 
-  function is_light_on(light_type) {
-    return document.querySelector(`#${light_type}Light`)
-      .classList.contains(light_type)
+  function is_light_on(type) {
+    return get_light(type).classList.contains(type)
   }
 
   var controls = document.querySelector('#controls')
